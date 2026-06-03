@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Supplementary Parts and Dealer Options – Instructions for Use</title>
+
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #f2f4f7;
+    color: #333;
+  }
+
+  .top-header {
+    background: #003399;
+    color: white;
+    padding: 28px 20px;
+    text-align: center;
+  }
+  .top-header h1 {
+    margin: 0;
+    font-size: 26px;
+    font-weight: bold;
+  }
+  .top-header p {
+    margin: 6px 0 0;
+    font-size: 14px;
+  }
+
+  .container {
+    max-width: 1100px;
+    margin: 30px auto 60px;
+    padding: 0 20px;
+  }
+
+  .card {
+    background: white;
+    border: 1px solid #d0d7de;
+    padding: 24px 28px;
+    margin-bottom: 30px;
+    border-radius: 4px;
+  }
+
+  .note-box {
+    border-left: 6px solid #e6b800;
+    background: #fff8d6;
+    padding: 12px 14px;
+    font-size: 15px;
+    margin-top: 16px;
+    line-height: 1.5;
+  }
+
+  .version-hint {
+    margin-top: 14px;
+    font-size: 14px;
+    font-style: italic;
+  }
+
+  .block {
+    background: white;
+    border: 1px solid #d0d7de;
+    padding: 20px;
+    margin-bottom: 30px;
+    border-radius: 4px;
+  }
+
+  .block h2 {
+    margin-top: 0;
+    font-size: 20px;
+    color: #003399;
+    border-bottom: 2px solid #003399;
+    padding-bottom: 5px;
+  }
+
+  .block ul {
+    columns: 2;
+    padding-left: 20px;
+  }
+
+  .block li {
+    margin-bottom: 6px;
+    font-size: 15px;
+  }
+
+  a {
+    color: #003399;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  iframe#docFrame {
+    width: 100%;
+    height: 90vh;
+    border: 1px solid #ccc;
+    margin-top: 20px;
+    background: #fff;
+  }
+
+  .fallback-area {
+    margin-top: 10px;
+    font-size: 15px;
+  }
+</style>
+
+<script>
+  function loadDoc(file) {
+    document.getElementById("docFrame").src = file + "?t=" + Date.now();
+  }
+
+  function openCurrentPdf() {
+    var src = document.getElementById("docFrame").src;
+    if (!src || src === "") return;
+    window.open(src, "_blank");
+  }
+</script>
+</head>
+
+<body>
+
+<div class="top-header">
+  <h1>Supplementary Parts and Dealer Options – Instructions for Use</h1>
+  <p>Manufacturer: Kawasaki Industrial Co., Ltd.</p>
+</div>
+
+<div class="container">
+
+  <div class="card">
+    <h2>Pantograph Jack Instruction Manuals</h2>
+
+    <p>This page provides access to the instruction manuals for the Pantograph Jack. These manuals are provided for the EU market.</p>
+
+    <p class="version-hint">You can determine the applicable version based on the purchase date.</p>
+
+    <div class="note-box">
+      <strong>Note:</strong><br>
+      These manuals are intended for customers, dealers, and service personnel.<br>
+      Please use the language version appropriate for your region.
+    </div>
+  </div>
+
+
+
+  <div class="block">
+    <h2>Language Versions – Manual v1.0 (Valid From: 2026‑04‑21~)</h2>
+    <ul>
+      <li><a onclick="loadDoc('Manual_v1.0_EN.pdf')">English (EN)</a></li>
+      <li><a onclick="loadDoc('Manual_v1.0_BG.pdf')">Bulgarian (BG)</a></li>
+      <li><a onclick="loadDoc('Manual_v1.0_CS.pdf')">Czech (CS)</a></li>
+      <li><a onclick="loadDoc('Manual_v1.0_DA.pdf')">Danish (DA)</a></li>
+
+
+    </ul>
+  </div>
+
+  <iframe id="docFrame"></iframe>
+
+  <div class="fallback-area">
+    If the PDF does not display, <a onclick="openCurrentPdf()">click here to open it.</a>
+  </div>
+
+</div>
+
+<script>
+  // 初期表示のPDFにもキャッシュ破壊パラメータを付ける
+  window.addEventListener("DOMContentLoaded", function() {
+    document.getElementById("docFrame").src = "Manual_v2.0_EN.pdf?t=" + Date.now();
+  });
+</script>
+
+</body>
+</html>
