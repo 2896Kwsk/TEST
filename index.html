@@ -101,11 +101,24 @@
     margin-top: 10px;
     font-size: 15px;
   }
+
+  /* PDF名表示エリア */
+  #currentPdfName {
+    margin-top: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #003399;
+  }
 </style>
 
 <script>
   function loadDoc(file) {
-    document.getElementById("docFrame").src = file + "?t=" + Date.now();
+    const fullPath = file + "?t=" + Date.now();
+    document.getElementById("docFrame").src = fullPath;
+
+    // PDF名表示更新
+    document.getElementById("currentPdfName").textContent =
+      "現在表示中の PDF： " + file;
   }
 
   function openCurrentPdf() {
@@ -113,6 +126,14 @@
     if (!src || src === "") return;
     window.open(src, "_blank");
   }
+
+  // 初期表示
+  window.addEventListener("DOMContentLoaded", function() {
+    const file = "Manual_v3.0_EN.pdf";
+    document.getElementById("docFrame").src = file + "?t=" + Date.now();
+    document.getElementById("currentPdfName").textContent =
+      "現在表示中の PDF： " + file;
+  });
 </script>
 </head>
 
@@ -171,18 +192,15 @@
 
   <iframe id="docFrame"></iframe>
 
+  <!-- 現在表示中のPDF名 -->
+  <div id="currentPdfName"></div>
+
   <div class="fallback-area">
     If the PDF does not display, <a onclick="openCurrentPdf()">click here to open it.</a>
   </div>
 
 </div>
 
-<script>
-  // 初期表示のPDFにもキャッシュ破壊パラメータを付ける
-  window.addEventListener("DOMContentLoaded", function() {
-    document.getElementById("docFrame").src = "Manual_v3.0_EN.pdf?t=" + Date.now();
-  });
-</script>
-
 </body>
 </html>
+
