@@ -93,7 +93,6 @@
     width: 100%;
     height: 90vh;
     border: 1px solid #ccc;
-    margin-top: 20px;
     background: #fff;
   }
 
@@ -104,8 +103,9 @@
 
   /* PDF name display */
   #currentPdfName {
-    margin-top: 12px;
-    font-size: 16px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 17px;
     font-weight: bold;
     color: #003399;
   }
@@ -190,10 +190,10 @@
     </ul>
   </div>
 
-  <iframe id="docFrame"></iframe>
-
-  <!-- PDF name display -->
+  <!-- PDF name ABOVE iframe -->
   <div id="currentPdfName"></div>
+
+  <iframe id="docFrame"></iframe>
 
   <div class="fallback-area">
     If the PDF does not display, <a onclick="openCurrentPdf()">click here to open it.</a>
