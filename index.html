@@ -102,7 +102,7 @@
     font-size: 15px;
   }
 
-  /* PDF名表示エリア */
+  /* PDF name display */
   #currentPdfName {
     margin-top: 12px;
     font-size: 16px;
@@ -116,9 +116,9 @@
     const fullPath = file + "?t=" + Date.now();
     document.getElementById("docFrame").src = fullPath;
 
-    // PDF名表示更新
+    // English display
     document.getElementById("currentPdfName").textContent =
-      "現在表示中の PDF： " + file;
+      "Currently Displayed PDF: " + file;
   }
 
   function openCurrentPdf() {
@@ -127,12 +127,12 @@
     window.open(src, "_blank");
   }
 
-  // 初期表示
+  // Initial display
   window.addEventListener("DOMContentLoaded", function() {
     const file = "Manual_v3.0_EN.pdf";
     document.getElementById("docFrame").src = file + "?t=" + Date.now();
     document.getElementById("currentPdfName").textContent =
-      "現在表示中の PDF： " + file;
+      "Currently Displayed PDF: " + file;
   });
 </script>
 </head>
@@ -192,7 +192,7 @@
 
   <iframe id="docFrame"></iframe>
 
-  <!-- 現在表示中のPDF名 -->
+  <!-- PDF name display -->
   <div id="currentPdfName"></div>
 
   <div class="fallback-area">
@@ -203,4 +203,3 @@
 
 </body>
 </html>
-
